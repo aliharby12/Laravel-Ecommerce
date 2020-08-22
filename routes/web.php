@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', 'FrontEndController@index')->name('index');
+Route::get('/', 'FrontEndController@index')->name('product.index');
+Route::get('product/{product}', 'FrontEndController@singleProduct')->name('product.single');
 
 
 Route::resource('products', 'ProductController');
