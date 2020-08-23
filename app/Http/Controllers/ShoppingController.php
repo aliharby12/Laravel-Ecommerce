@@ -13,7 +13,7 @@ class ShoppingController extends Controller
 
       $pdt = Product::find(request()->pdt_id);
 
-      $cart = Cart::add([
+      $cartItem = Cart::add([
 
         'id' => $pdt->id,
         'name' => $pdt->name,
@@ -22,6 +22,15 @@ class ShoppingController extends Controller
 
       ]);
 
-      dd(Cart::content());
+      Cart::associate($cartItem->rowId, 'App\Product');
+
+      return Redirect(route('cart'));
+    }
+
+
+    public function cart()
+    {
+      
+      return view('cart');
     }
 }
