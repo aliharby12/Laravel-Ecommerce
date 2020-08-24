@@ -30,7 +30,14 @@ class ShoppingController extends Controller
 
     public function cart()
     {
-      
+
       return view('cart');
+    }
+
+
+    public function cart_delete($pdt)
+    {
+      Cart::remove($pdt);
+      return redirect()->back();
     }
 }
