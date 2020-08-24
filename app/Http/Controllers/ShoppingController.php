@@ -40,4 +40,37 @@ class ShoppingController extends Controller
       Cart::remove($pdt);
       return redirect()->back();
     }
+
+
+    public function increase($pdt, $qty)
+    {
+      Cart::update($pdt, $qty + 1);
+      return redirect()->back();
+    }
+
+
+    public function decrease($pdt, $qty)
+    {
+      Cart::update($pdt, $qty - 1);
+      return redirect()->back();
+    }
+
+
+    public function quick_add($pdt)
+    {
+      $pdt = Product::find($pdt);
+
+      $cartItem = Cart::add([
+
+        'id' => $pdt->id,
+        'name' => $pdt->name,
+        'qty' => 1,
+        'price' => $pdt->price,
+
+      ]);
+
+      Cart::associate($cartItem->rowId, 'App\Product');
+
+      return Redirect(route('cart'));
+    }
 }

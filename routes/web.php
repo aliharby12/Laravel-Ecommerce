@@ -12,12 +12,26 @@
 */
 // product routes
 Route::get('/', 'FrontEndController@index')->name('product.index');
-Route::get('product/{product}', 'FrontEndController@singleProduct')->name('product.single');
+Route::get('product/{product}',
+'FrontEndController@singleProduct')->name('product.single');
 
 // cart routes
-Route::post('/cart/add', 'ShoppingController@add_to_cart')->name('cart.add');
-Route::get('/cart', 'ShoppingController@cart')->name('cart');
-Route::get('/cart/delete/{id}', 'ShoppingController@cart_delete')->name('cart.delete');
+Route::prefix('cart/') -> group(function(){
+
+    Route::post('add', 'ShoppingController@add_to_cart')->name('cart.add');
+    Route::get('', 'ShoppingController@cart')->name('cart');
+    Route::get('delete/{id}',
+    'ShoppingController@cart_delete')->name('cart.delete');
+
+    Route::get('increase/{pdt}/{qty}',
+    'ShoppingController@increase')->name('cart.increase');
+
+    Route::get('decrease/{pdt}/{qty}',
+    'ShoppingController@decrease')->name('cart.decrease');
+
+    Route::get('quick/add/{pdt}',
+    'ShoppingController@quick_add')->name('cart.quick.add');
+});
 
 Route::resource('products', 'ProductController');
 

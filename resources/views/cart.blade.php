@@ -57,9 +57,9 @@
                                     <td class="product-quantity">
 
                                         <div class="quantity">
-                                            <a href="#" class="quantity-minus">-</a>
+                                            <a href="{!! route('cart.decrease',['pdt' => $pdt->rowId, 'qty' => $pdt->qty]) !!}" class="quantity-minus">-</a>
                                             <input title="Qty" class="email input-text qty text" type="text" value="{{ $pdt->qty }}" readonly>
-                                            <a href="#" class="quantity-plus">+</a>
+                                            <a href="{!! route('cart.increase',['pdt' => $pdt->rowId, 'qty' => $pdt->qty]) !!}" class="quantity-plus">+</a>
                                         </div>
 
                                     </td>

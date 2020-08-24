@@ -1,3 +1,4 @@
+
 @extends('layouts.front')
 
 @section('page')
@@ -29,13 +30,13 @@
                         @csrf
 
                         <div class="quantity">
-                            <a href="#" class="quantity-minus">-</a>
+                            <a href="#" class="quantity-minus quantity-minus-change">-</a>
                             <input title="Qty" class="email input-text qty text" name="qty" type="text" value="2">
-                            <a href="#" class="quantity-plus">+</a>
+                            <a href="#" class="quantity-plus quantity-plus-change">+</a>
                         </div>
 
                         <input type="hidden" name="pdt_id" value="{{ $product->id }}">
-                        
+
                         <button class="btn btn-medium btn--primary">
                             <span class="text">Add to Cart</span>
                             <i class="seoicon-commerce"></i>
