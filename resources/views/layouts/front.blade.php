@@ -3,7 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Seosight - Shop</title>
+    <title>Ecommerce | @yield('title')</title>
 
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/fonts.css') }}') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/crumina-fonts.css') }}">
@@ -73,7 +73,9 @@
         <div class="row pt120">
             <div class="col-lg-8 col-lg-offset-2">
                 <div class="heading align-center mb60">
-                    <h4 class="h1 heading-title">Ecommerce Website</h4>
+                    <a href="{!! route('product.index') !!}">
+                      <h4 class="h1 heading-title">Ecommerce Website</h4>
+                    </a>
                     <p class="heading-text">Buy products, and we ship to you.
                     </p>
                 </div>
