@@ -1,6 +1,10 @@
 
 @extends('layouts.front')
 
+@section('title')
+  Detail
+@endsection
+
 @section('page')
   <div class="container">
       <div class="row medium-padding120">

@@ -1,5 +1,9 @@
 @extends('layouts.front')
 
+@section('title')
+  Checkout
+@endsection
+
 @section('page')
   <div class="container-fluid">
   	<div class="row medium-padding120 bg-border-color">
@@ -95,7 +99,7 @@
   									  <script
   									    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
   									    data-key="pk_test_51HJwQnDhollZ1G3BLhgnHCGQwiHfeIUp0rVt7coSPB30DId38tFJ6bwfhPVjWbXCi2huSe3JShzOtsREUlazQLOh008YdoyGZI"
-  									    data-amount="999"
+  									    data-amount="{{ Cart::total() }}"
   									    data-name="Ecommerce Website"
   									    data-description="Ecommerce Website with laravel"
   									    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"

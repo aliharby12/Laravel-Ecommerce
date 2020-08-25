@@ -1,5 +1,8 @@
 @extends('layouts.front')
 
+@section('title')
+  Products
+@endsection
 @section('page')
   <div class="container">
       <div class="row pt120">

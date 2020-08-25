@@ -1,5 +1,9 @@
 @extends('layouts.front')
 
+@section('title')
+  Cart
+@endsection
+
 @section('page')
   <div class="container-fluid">
       <div class="row bg-border-color medium-padding120">
