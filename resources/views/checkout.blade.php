@@ -90,13 +90,14 @@
   							</a>
 
   							<span style="float: right;">
-  								<form action="/your-server-side-code" method="POST">
+  								<form action="{!! route('cart.checkout') !!}" method="POST">
+                    @csrf
   									  <script
   									    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-  									    data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+  									    data-key="pk_test_51HJwQnDhollZ1G3BLhgnHCGQwiHfeIUp0rVt7coSPB30DId38tFJ6bwfhPVjWbXCi2huSe3JShzOtsREUlazQLOh008YdoyGZI"
   									    data-amount="999"
-  									    data-name="Stripe.com"
-  									    data-description="Widget"
+  									    data-name="Ecommerce Website"
+  									    data-description="Ecommerce Website with laravel"
   									    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
   									    data-locale="auto"
   									    data-zip-code="true">
