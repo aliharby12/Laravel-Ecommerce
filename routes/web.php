@@ -32,7 +32,8 @@ Route::prefix('cart/') -> group(function(){
     Route::get('quick/add/{pdt}',
     'ShoppingController@quick_add')->name('cart.quick.add');
 
-    Route::post('checkout', 'CheckoutController@checkout')->name('cart.checkout');
+    Route::get('checkout', 'CheckoutController@checkout')->name('cart.checkout');
+    Route::post('checkout', 'CheckoutController@pay')->name('cart.checkout');
 
 });
 
